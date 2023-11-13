@@ -103,29 +103,29 @@ for (var i = 1; i < finances.length; i++) {
 }
 
 var averageChange = totalChange / (totalMonths - 1);
-var roundedAverage = Math.floor(averageChange);
+var roundedAverage = averageChange
 
 var greatestIncrease = 0; 
 var greatestIncreaseDate = " "; 
-var greatestDecrease = ' '; 
+var greatestDecrease = 0; 
 var greatestDecreaseDate = " "; 
 
 for (var i = 1; i < finances.length; i++) { 
   var change = finances[i][1] - finances [i - 1][1];
   if (change > greatestIncrease) {
-    greaatestIncrease = change; 
+    greatestIncrease = change; 
     greatestIncreaseDate = finances[i][0]; 
   }
+  if (change < greatestDecrease) {
+    greatestDecrease = change; 
+    greatestDecreaseDate = finances [i][0]; 
+  }
 }
-
-
 
 console.log("Financial Analysis");
 console.log("------------------" );
 console.log("Total Months: ", totalMonths);
 console.log("Total: $" + totalProfitLoss); 
-console.log("Average Change: $" + averageChange);
-console.log ("Greatest Increase:", greatestIncrease, greatestIncreaseDate); 
-// console.log("Greatest increase in profit/losses:", greatestIncreaseDate, "£" + greatestIncrease)
-console.log ("Greatest Decrease: ", greatestDecrease, greatestDecreaseDate); 
-
+console.log("Average Change: $" + roundedAverage.toFixed(2));
+console.log("Greatest Increase in Profits: ", greatestIncreaseDate, "($" + greatestIncrease +")"); 
+console.log("Greatest Decrease in Profits: ", greatestDecreaseDate, "($" + greatestDecrease +")"); 

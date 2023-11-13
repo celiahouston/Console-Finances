@@ -27,12 +27,6 @@ for (var i = 1; i < finances.length; i++) {
   }
 }
 
-console.log("Financial Analysis");
-console.log("------------------");
-console.log("Total Months: ", totalMonths);
-console.log("Total: $" + totalProfitLoss);
-console.log("Average Change: 
-
 
 ## Overview
 
@@ -74,6 +68,8 @@ When you open your code in the browser your resulting analysis should look simil
 
 Your final code should print the analysis to the console.
 
+console.log("Greatest Increase in Profits/Losses:", greatestIncreaseDate, "($" + greatestIncrease + ")");
+console.log("Greatest Decrease in Profits/Losses:", greatestDecreaseDate, "($" + greatestDecrease + ")");
 
 
 finances.forEach(function (month) {
