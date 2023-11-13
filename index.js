@@ -88,15 +88,13 @@ var finances = [
 ];
 
 var totalMonths = finances.length;
-console.log("Total number of months:", totalMonths);
 var totalProfitLoss = 0;
 
 finances.forEach(function (month) {
-    totalProfitLoss += month[1];
+  totalProfitLoss += month[1];
 });
 
-console.log("Net total amount of Profit/Losses over the entire period: $" + totalProfitLoss);
-
+console.log("Total number of months:", totalMonths);
 
 var totalChange = 0;
 for (var i = 1; i < finances.length; i++) {
@@ -107,28 +105,27 @@ for (var i = 1; i < finances.length; i++) {
 var averageChange = totalChange / (totalMonths - 1);
 var roundedAverage = Math.floor(averageChange);
 
-console.log("Average of the changes in Profit/Losses over the entire period: $" + roundedAverage);
+var greatestIncrease = 0; 
+var greatestIncreaseDate = " "; 
+var greatestDecrease = ' '; 
+var greatestDecreaseDate = " "; 
+
+for (var i = 1; i < finances.length; i++) { 
+  var change = finances[i][1] - finances [i - 1][1];
+  if (change > greatestIncrease) {
+    greaatestIncrease = change; 
+    greatestIncreaseDate = finances[i][0]; 
+  }
+}
 
 
-// create variables 
-// calc total months from array
-// calc net total 
-// calc profits and losses it 
-// calc changes in profits/losses and find average change
-// calc greatest increase and decrease in profit/losses 
 
-console.log( )  // total months
-console.log( ) // total profit loss
-console.log( ) // average change $ 
-console.log ( ) // greatest increase 
-console.log ( ) // greatest decrease 
+console.log("Financial Analysis");
+console.log("------------------" );
+console.log("Total Months: ", totalMonths);
+console.log("Total: $" + totalProfitLoss); 
+console.log("Average Change: $" + averageChange);
+console.log ("Greatest Increase:", greatestIncrease, greatestIncreaseDate); 
+// console.log("Greatest increase in profit/losses:", greatestIncreaseDate, "£" + greatestIncrease)
+console.log ("Greatest Decrease: ", greatestDecrease, greatestDecreaseDate); 
 
-// var totalProfitLoss = 
-// var changes = 
-// var totalChange = 
-
-// var greatestIncrease =
-// var greatestDecrease = 
-// var greatestIncreaseDate = 
-// var greatestDecreaseDate =
- 

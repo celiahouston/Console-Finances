@@ -1,4 +1,38 @@
 # Console-Finances# Unit 4 Challenge: Console Finances
+// create variables 
+// calc total months from array
+// calc net total 
+// calc profits and losses it 
+// calc changes in profits/losses and find average change
+// calc greatest increase and decrease in profit/losses 
+
+// var totalProfitLoss = 
+// var changes = 
+// var totalChange = 
+// var greatestIncreaseDate = 
+// var greatestDecreaseDate =
+ 
+
+
+
+for (var i = 1; i < finances.length; i++) {
+  var change = finances[i][1] - finances[i - 1][1];
+  if (change > greatestIncrease) {
+    greatestIncrease = change;
+    greatestIncreaseDate = finances[i][0];
+  }
+  if (change < greatestDecrease) {
+    greatestDecrease = change;
+    greatestDecreaseDate = finances[i][0];
+  }
+}
+
+console.log("Financial Analysis");
+console.log("------------------");
+console.log("Total Months: ", totalMonths);
+console.log("Total: $" + totalProfitLoss);
+console.log("Average Change: 
+
 
 ## Overview
 
@@ -39,6 +73,16 @@ When you open your code in the browser your resulting analysis should look simil
   ```
 
 Your final code should print the analysis to the console.
+
+
+
+finances.forEach(function (month) {
+  totalProfitLoss += month[1]; // Assuming profit/losses are stored in the second element
+});
+
+// Log the total profits in the console
+console.log("Net total amount of Profit/Losses over the entire period: $" + totalProfitLoss);
+
 
 **Hints:**
 
